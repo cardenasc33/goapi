@@ -19,12 +19,19 @@ func main () {
 
 	fmt.Println("Starting Go API service...")
 
-	fmt.Println("GO API")
-
 	// Start server
 	// @params: (base location of server, handler that Mux type satisfies)
-	err := http.ListenAndServe("localhost:8000", r)
+	var ip = "localhost"
+	var port = "8000"
+	var socket = ip + ":" + port 
+	fmt.Println("Serving on ", socket)
+	err := http.ListenAndServe( socket , r)
 	if err != nil {
 		log.Error(err)  // log any errors when starting the server
 	}
+
+
+	
+	
+	
 }

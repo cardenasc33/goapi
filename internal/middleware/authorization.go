@@ -1,11 +1,10 @@
 package middleware
 
 import (
-	"Christian/Documents/goapi/api"
+	"github.com/cardenasc33/goapi/api"
+	"github.com/cardenasc33/goapi/internal/tools"
 	"errors"
 	"net/http"
-
-	"github.com/cardenasc33/goapi/api"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -41,7 +40,7 @@ func Authorization(next http.Handler) http.Handler {
 		}
 
 		// Query database
-		var loginDetails *tools.LoginDatails
+		var loginDetails *tools.LoginDetails
 		loginDetails = (*database).GetUserLoginDetails(username)
 
 		// Return request error
@@ -54,6 +53,8 @@ func Authorization(next http.Handler) http.Handler {
 		// Calls next middleware in line or HandlerFunction
 		// for the endpoint if there is no middleware left
 		// e.g. Middlware -> next.ServeHTTP -> Middleware2 -> ... -> HandlerFunc
+		// Actual: Authorization -> next.ServeHTTP -> GetCoinBalance
+		
 		next.ServeHTTP(w, r)
 	})
 }

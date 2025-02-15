@@ -1,11 +1,9 @@
 package api
 
-import "net/http"
-
-// import (
-// 	"encoding/json"
-// 	"net/http"
-// )
+import (
+	"encoding/json"
+	"net/http"
+)
 
 // PARAMETERS & RESPONSES OF ENDPOINT
 

@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi" //package for web dev
-	// "ssh://git@github.com/cardenasc33/goapi/internal/handlers" // importing our own package
+	"github.com/cardenasc33/goapi/internal/handlers" // importing our own package
 	log "github.com/sirupsen/logrus" // used to log errors for debugging
 
 )

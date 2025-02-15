@@ -1,23 +1,20 @@
 package handlers
 
 import (
-	"Christian/Documents/goapi/api"
-	"Christian/Documents/goapi/internal/tools"
+	"github.com/cardenasc33/goapi/api"
+	"github.com/cardenasc33/goapi/internal/tools"
 	"encoding/json"
 	"net/http"
-
-	"github.com/cardenasc33/goapi/api"
-	"github.com/cardenasc33/internal/tools"
 	"github.com/gorilla/schema"
 	log "github.com/sirupsen/logrus"
 )
 
-func GetCoinBalance http.ResponseWriter, r *http.Request) {
+func GetCoinBalance(w http.ResponseWriter, r *http.Request) {
 	// Grab username from the parameters passed in
 	
 	// Decode parameters
 	var params = api.CoinBalanceParams{} 
-	var decoder = *schema.Decoder = schema.NewDecoder()
+	var decoder *schema.Decoder = schema.NewDecoder()
 	var err error
 
 	// Grab params from URL and set them to the values in the struct
@@ -32,7 +29,8 @@ func GetCoinBalance http.ResponseWriter, r *http.Request) {
 	}
 
 	// instantiate a db interface
-	var database, err = tools.NewDatabase() 
+	var database *tools.DatabaseInterface
+	database, err = tools.NewDatabase() 
 	if err != nil {
 		api.InternalErrorHandler(w)
 		return

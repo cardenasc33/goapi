@@ -1,10 +1,12 @@
 package handlers
 
 import (
+	"encoding/json"
+	"fmt"
+	"net/http"
+
 	"github.com/cardenasc33/goapi/api"
 	"github.com/cardenasc33/goapi/internal/tools"
-	"encoding/json"
-	"net/http"
 	"github.com/gorilla/schema"
 	log "github.com/sirupsen/logrus"
 )
@@ -47,9 +49,12 @@ func GetCoinBalance(w http.ResponseWriter, r *http.Request) {
 
 	// Set value to the response struct
 	var response = api.CoinBalanceResponse{
+		Name: (*tokenDetails).Username,
 		Balance: (*tokenDetails).Coins,
 		Code: http.StatusOK,
 	}
+ 
+	fmt.Println(response.Name, "'s coin balance: ", response.Balance)
 
 	// Write the response struct to the response writer
 	w.Header().Set("Content-Type", "application/json")

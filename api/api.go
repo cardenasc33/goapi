@@ -20,6 +20,9 @@ type CoinBalanceResponse struct {
 	// Success Code, Usually 200
 	Code int
 
+	// Name of target
+	Name string
+
 	// Account Balance
 	Balance int64
 }

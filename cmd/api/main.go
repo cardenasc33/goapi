@@ -29,8 +29,6 @@ func main () {
 	if err != nil {
 		log.Error(err)  // log any errors when starting the server
 	}
-
-
 	
 	
 	

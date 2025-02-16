@@ -12,7 +12,7 @@ The code displays how to do the following:
 * Add Middleware
 * Logging Errors
 * Exporting External Packages
-* Create a custom JSON responses
+* Create custom JSON responses
 
 ## Installation Requirements:
 

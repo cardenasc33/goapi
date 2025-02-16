@@ -27,6 +27,6 @@ The code displays how to do the following:
 3. Enter the command "go run ./cmd/api/main.go" .
 4. While the server is running, open an API testing software such as Postman - https://www.postman.com/downloads/
 5. Create a new HTTP GET request using http://localhost:8000/account/coins/?username={name}
-     - Replace name with a person from the database (e.g. alex)
+     - Replace {name} with a person from the database (e.g. alex)
      - Add a header key: Authorization and value: {token} (e.g. 123ABC)
 6. Send the http request and you should see a JSON response in return of the person's coin balance from the database.
